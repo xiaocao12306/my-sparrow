@@ -1,4 +1,4 @@
-import { drawRedRect } from '../dist';
+import { drawRedRect } from '../src';
 
 describe('test', () => {
   test('drawRedRect()', () => {
@@ -7,9 +7,8 @@ describe('test', () => {
     svg.setAttribute('height', 400);
     svg.setAttribute('viewBox', [0, 0, 400, 400]);
     document.body.appendChild(svg);
-    
+
     drawRedRect(svg);
     expect(svg.getElementsByTagName('rect').length).toBe(1);
   });
-
 });

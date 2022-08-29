@@ -11,11 +11,20 @@ export function transform(type, context, ...params) {
   applyTransform(group, `${type}(${params.join(', ')})`);
 }
 
+/**
+ * 重置
+ * @param {*} context
+ */
 export function restore(context) {
   const { group } = context;
   const { parentNode } = group;
   context.group = parentNode;
 }
+
+/**
+ * 更新节点
+ * @param {*} context
+ */
 export function save(context) {
   const { group } = context;
   const newGroup = createSVGElement('g');
